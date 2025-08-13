@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar/>
       <h1>Página de React JS</h1>
       <MotivosPraUsarReact/>
     </>
