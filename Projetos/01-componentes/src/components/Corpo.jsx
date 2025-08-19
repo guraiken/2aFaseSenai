@@ -9,9 +9,10 @@ function Corpo() {
     <div className="corpo-container">
         <Titulo1 />
         <Titulo2 texto={"Primeiro pedaço de página"} emoji={"💩"}/>
-        <Texto></Texto>
+        <Texto texto={"Isso é um pedaço de texto personalizado"}></Texto>
         <Titulo2 texto={"Segundo pedação de página"} emoji={"😂"}/>
-        <Textao></Textao>
+        <Textao textasso={"Texto que é pra ser enorme Texto que é pra ser enorme Texto que é pra ser enorme Texto que é pra ser enorme Texto que é pra ser enorme Texto que é pra ser enorme Texto que é pra ser enorme"} emoji={" 😂"}></Textao>
+        <img src="./imagens/davy-jones-1.jpg" alt="" className="imagem-corpo"/>
     </div>
   )
 }

@@ -2,3 +2,7 @@
     background-color: tomato;
     min-height: calc(100vh - 70px);
 }
+.imagem-corpo {
+    padding: 10px;
+    width: 250px;
+}
