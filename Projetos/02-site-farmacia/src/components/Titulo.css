@@ -1,0 +1,8 @@
+.style-titulo {
+    color: white;
+    background-color: var(--destaque);
+    padding: 15px;
+    margin-top: 12px;
+    border:none;
+    border-radius: 10px;
+}

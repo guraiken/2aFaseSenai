@@ -1,0 +1,29 @@
+.navbar-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+
+
+    background-color: var(--destaque);
+    height: 40px;
+    border-radius: 0px;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.imagem-nav {
+    position: absolute;
+    left: 2px;
+    top: 2px;
+}

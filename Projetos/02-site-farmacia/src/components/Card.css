@@ -1,0 +1,20 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--sub-destaque);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 200px;
+}
+
+.card-titulo,.card-descricao {
+    color: var(--fonte-texto);
+    padding: 2px;
+    margin: 2px 0 10px;
+    text-align: center;
+    background-color: var(--destaque);
+    border-radius: 10px;
+}

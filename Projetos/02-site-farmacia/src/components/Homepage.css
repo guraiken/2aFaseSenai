@@ -1,0 +1,19 @@
+.homepage-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 90%;
+    min-height: 100vh;
+    background-color: var(--sub-destaque);
+}
+
+.homepage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.imagem-homepage {
+    margin-bottom: 15px;
+}
