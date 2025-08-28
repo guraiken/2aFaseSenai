@@ -3,11 +3,11 @@
     justify-content: center;
     align-items: center;
     background-color: var(--sub-destaque);
-    padding: 10px;
+    padding: 0px;
     border: none;
     border-radius: 10px;
-    width: 150px;
-    height: 200px;
+    width: 160px;
+    height: 210px;
 }
 
 .card-titulo,.card-descricao {

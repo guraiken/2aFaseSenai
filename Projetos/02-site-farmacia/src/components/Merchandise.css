@@ -1,11 +1,10 @@
 .merchandise-container {
     display: flex;
     height: fit-content;
-    width: 75%;
+    width: 80%;
     background-color: var(--cor-3);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     margin-top: 15px;
     padding: 10px;
     border-radius: 10px;
@@ -13,7 +12,9 @@
 
 .merchandise-area {
     display: grid;
-    grid-template-columns: repeat(3, min(12rem));
-    grid-area: auto;
-    padding: 10px;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
 }
