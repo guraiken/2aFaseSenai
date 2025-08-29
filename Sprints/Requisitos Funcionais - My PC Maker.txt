@@ -1,0 +1,18 @@
+Requisitos Funcionais:
+
+RF01 - O usuário poderá criar/editar/excluir sua conta no site;
+RF02 - O usuário poderá montar computadores de acordo com as peças fornecidas no site;
+RF03 - O usuário poderá postar/excluir os computadores para serem avaliados e compartilhados com a comunidade;
+RF04 - O usuário poderá comentar/curtir e visualizar posts feitos por outros usuários;
+RF05 - O usuário poderá medir o consumo total do computador montado;
+RF06 - O usuário pode adicionar/editar foto de perfil;
+RF07 - O usuário poderá escolher suas preferências de acordo com seus gostos e o sistema deve gerar o feed. (Feed Personalizado);
+
+Requisitos Não Funcionais:
+
+RNF01 - O nome de usuário não pode ser igual a de outro (usuário único);
+RNF02 - No cadastro a senha deve ter pelo menos 8 carácteres;
+RNF03 - O envio do post deve demorar no máximo 3 segundos;
+RNF04 - Os comentários devem ser moderados por algum administrador se estiver fora das normas do site, o comentário será aprovado no máximo em 2 dias;
+RNF05 - Alguém avaliará se a foto de perfil deverá estar adequada aos termos;
+
