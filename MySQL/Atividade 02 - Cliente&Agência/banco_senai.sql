@@ -80,18 +80,50 @@ INSERT INTO categoria
 (nome)
 VALUES
 ("Private"),
-("Personnalite"),
+("Exclusive"),
+("Gold"),
 ("Básico");
 
 -- Consulta a coluna (pesquisa de dados)
-SELECT * FROM cliente;
+SELECT * FROM conta;
+
+INSERT INTO tipo_conta
+(descricao)
+VALUES
+("Poupança"),
+("Corrente");
+
+INSERT INTO agencia
+(nome)
+VALUES
+("Campeche"),
+("Ingleses"),
+("Centro");
 
 INSERT INTO cliente
 (nome, cpf, telefone, rua, numero_endereco, bairro, CEP, cidade, renda, categoria_cliente_id)
 VALUES
-("Carlos", "12312312342", "123132131", "Rua alzira blabla bla", 112, "Ingleses", 8887654, "Florianópolis", 2400, 1),
-("Adalberto", "12313212342", "123121131", "Rua Servidao blabla bla", 221, "Ingleses", 8877764, "Florianópolis", 3000, 1),
-("Saimon", 11212342542, 123122311, "Rua dos Limao blabla bla", 12, "Rio Vermelho", 8843654, "Florianópolis", 1600, 2);
+("Carlos", "12312312342", "123132131", "Rua alzira blabla bla", 112, "Ingleses", 8887654, "Florianópolis", 1800, 1),
+("Adalberto", "12313212342", "123121131", "Rua Servidao blabla bla", 221, "Ingleses", 8877764, "Florianópolis", 2400, 1),
+("João", "45645645678", "987654321", "Av. Brasil", 120, "Trindade", 8803400, "Florianópolis", 3200, 2),
+("Ana", "78978978901", "912345678", "Rua João Paulo", 87, "Córrego Grande", 8804000, "Florianópolis", 3500, 2),
+("Pedro", "15915915988", "911223344", "Rua do Sol", 300, "Campeche", 8806000, "Florianópolis", 4500, 3),
+("Luciana", "95195195133", "933221100", "Rua das Gaivotas", 255, "Ingleses", 8805800, "Florianópolis", 4800, 3),
+("Eduardo", "74174174122", "999888777", "Rua Hermon", 180, "Rio Tavares", 8806700, "Florianópolis", 6200, 4),
+("Beatriz", "85285285244", "966555444", "Rua Coronel Pedro", 145, "Estreito", 8807500, "Florianópolis", 7000, 4);
+
+INSERT INTO conta
+(val_saldo, cliente_id, agencia_id, tipo_conta_id)
+VALUES
+("8000", 1, 2, 2),
+("10000", 2, 2, 2),
+("15000", 3, 3, 2),
+("18000", 4, 3, 2),
+("25300", 5, 1, 1),
+("35210", 6, 1, 1),
+("41500", 7, 1, 1),
+("52000", 8, 2, 2);
+
 
 
 
