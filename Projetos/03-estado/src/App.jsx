@@ -2,6 +2,10 @@ import { useState } from "react"
 import './App.css'
 import Comerciante from "./components/Comerciante"
 import Notaaluno from "./components/Notaaluno"
+import Porquinho from "./components/Porquinho"
+import Copomeio from "./components/Copomeio"
+import Copomeiocheio2 from "./components/Copomeiocheio2"
+import Salariogarcom from "./components/Salariogarcom"
 
 function App() {
   const[numero, setNumero] = useState(0)
@@ -40,8 +44,12 @@ function App() {
       <button onClick={incrementar}>+</button>
       <div></div>
       <button onClick={reset}>Reset</button>
-      <Comerciante></Comerciante>
-      <Notaaluno></Notaaluno>
+      <Comerciante />
+      <Notaaluno />
+      <Porquinho />
+      <Copomeio />
+      <Copomeiocheio2 />
+      <Salariogarcom />
     </>
   )
 }
