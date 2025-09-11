@@ -1,0 +1,25 @@
+.moedas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: blueviolet;
+    border-radius: 14px;
+    color: white;
+    height: 250px;
+    width: 250px;
+    margin-top: 10px;
+
+}
+
+.moedas-container input {
+    width: 40%;
+    height: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 8px;
+
+}

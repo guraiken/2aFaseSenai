@@ -4,6 +4,7 @@ import Demo from './components/Demo'
 import Gradescida from './components/Gradescida'
 import Conversor from './components/Conversor'
 import Moedas from './components/Moedas'
+import CalculadorImc from './components/CalculadoraImc'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <Gradescida />
     <Conversor />
     <Moedas />
+    <CalculadorImc />
     </>
   )
 }

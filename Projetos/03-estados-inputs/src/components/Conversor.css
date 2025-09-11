@@ -1,0 +1,26 @@
+.conversor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: burlywood;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 12px;
+    gap: 10px;
+}
+
+.conversor-container select {
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;    
+}
+
+.conversor-container input {
+    font-size: 18px;
+    height: 30px;
+    width: 60%;
+    border-radius: 12px;
+    text-align: center;
+}
