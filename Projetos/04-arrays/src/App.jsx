@@ -18,7 +18,7 @@ function App() {
     let pessoa = {
       id: Date.now(),
       nome: prompt("Digite o nome"),
-      idade: prompt("Digite a idade")
+      idade: Number(prompt("Digite a idade"))
     }
     // pessoas.push(pessoa) nao fazer isso em usestate
     
