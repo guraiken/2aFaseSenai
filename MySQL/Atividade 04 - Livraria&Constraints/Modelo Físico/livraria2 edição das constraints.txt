@@ -67,44 +67,31 @@ FOREIGN KEY (cliente_id)
 REFERENCES cliente(id_cliente)
 );
 
+ALTER TABLE livro 
+MODIFY COLUMN preco DECIMAL(8,2) CHECK (preco >=0);
 
-SELECT * FROM cliente;
-SELECT * FROM financiador;
-SELECT * FROM autor;
-SELECT * FROM editora;
-SELECT * FROM livro;
-SELECT * FROM pedido;
+ALTER TABLE editora
+MODIFY COLUMN nome_fantasia ENUM('Editora A', 'Editora B', 'Editora C');
 
--- Checar Editora
-
-INSERT INTO editora
-(razao_social)
-VALUES
-('Tal tal');
-
-INSERT INTO autor (rg)
-VALUE (1231232);
-
--- Teste CPF duplicado, not null e default
-INSERT INTO cliente 
-(cpf, nome)
-VALUES
-(123123113, 'Gustavo'),
-(123123113, 'Benjamin');
-
--- Constraint de check no pedido
-INSERT INTO pedido
-(qtd_pedido)
-VALUES
-(-1);
+ALTER TABLE financiador 
+MODIFY COLUMN nome VARCHAR(80) DEFAULT ('Financiador Público');
 
 INSERT INTO livro
-(categoria)
+(preco,categoria)
 VALUES
-('Horror'),
-('Teste');
+(12, 'Horror'),
+(-13, 'Ficção');
 
+INSERT INTO editora
+(nome_fantasia, razao_social)
+VALUES
+('Editora da Silva', 'teste2');
 
+INSERT INTO financiador
+(cnpj)
+VALUES
+(123131312);
 
+SELECT * FROM financiador;
 
 
