@@ -18,11 +18,30 @@ function App() {
     let pessoa = {
       id: Date.now(),
       nome: prompt("Digite o nome"),
-      idade: Number(prompt("Digite a idade"))
+      idade: Number(prompt("Digite a idade")),
+      preco: Number(prompt("Digite o preço"))
     }
     // pessoas.push(pessoa) nao fazer isso em usestate
     
     setPessoas([pessoa, ...pessoas])
+  }
+
+  function editar(id){
+    let pessoaEditada = {
+      id: Date.now(), 
+      nome: prompt("digite um nome"), 
+      idade: Number(prompt("digite a idade")), 
+      preco: Number(prompt("digite o preço"))
+    }
+
+    const edição = pessoas.map(pessoa => pessoa.id == id ? pessoaEditada : pessoa)
+    setPessoas([...edição])
+
+  }
+
+  function excluir(id){
+    const novasPessoas = pessoas.filter(pessoa => pessoa.id !== id)
+    setPessoas([...novasPessoas])
   }
 
   return (
@@ -35,6 +54,8 @@ function App() {
           <h3>{pessoa.nome}</h3>
           <p>Idade: {pessoa.idade}</p>
           <label htmlFor="">Preço: {pessoa.preco}</label>
+          <button onClick={() => editar(pessoa.id)}>Editar</button>
+          <button onClick={() => excluir(pessoa.id)}>Excluir</button>
         </div>
       ))}
     </div>
