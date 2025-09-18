@@ -50,11 +50,17 @@ VALUES
 
 -- COMANDO JOIN PRA JUNTAR AS TABELAS
 
-SELECT * FROM pedido
+CREATE VIEW vw_situacao_pedido AS
+SELECT 
+id_pedido, data_pedido, cliente.nome, acompanhamento.situacao FROM pedido
 JOIN cliente 
 ON pedido.cliente_id = cliente.id_cliente
 JOIN acompanhamento
 ON pedido.acompanhamento_id = acompanhamento.id_acompanhamento;
+
+SELECT * FROM vw_situacao_pedido;
+
+
 
 
 
