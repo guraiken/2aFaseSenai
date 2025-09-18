@@ -1,28 +1,41 @@
-.card-pessoa {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 0 0 5px rgb(94, 94, 94);
-  padding: 5px;
-  border-radius: 12px;
-  width: 200px;
-  gap: 10px;
-}
-
-.card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-
-}
-
 #root {
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+.app-container {
+  padding: 10px;
+  border-radius: 12px;
+  background-color: rgb(65, 65, 65);
+  border-style: none;
+}
+
+.app-a {
+  gap: 10px;
+  padding: 5px;
+}
+
+input {
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px;
+
+}
+
+h1 {
+  line-height: 0.5;
+}
+
+th, tr {
+  border-style: groove;
+  border-color: rgb(146, 146, 146);
+  padding: 10px;
+}
+
+button {
+  margin-top: 10px;
 }
 
 .logo {
@@ -60,4 +73,3 @@
 .read-the-docs {
   color: #888;
 }
-
