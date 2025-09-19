@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    
+    background-color: var(--harmonizacao);
+}
+
+.header h2 {
+    color: var(--contraste);
+
+}
+
+.logo {
+    border-radius: 200px;
+    margin-left: 10px;
+}

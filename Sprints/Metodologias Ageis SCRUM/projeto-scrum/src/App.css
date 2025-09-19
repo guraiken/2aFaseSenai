@@ -1,0 +1,19 @@
+:root {
+background-color: #132A3B;
+
+/* --link-detalhe: #1CA3C4;
+--detalhes-destaque: #54DEFD;
+--fundo-principal: #FFFBFA;
+--aviso-destaque: #FEC968;
+--fundo-escuro: #132A3B; */
+
+--principal: #00CFFF;
+--contraste: #FFC300;
+--cor-fundo: #132A3B;
+--harmonizacao: #4CA6C9;
+
+  background-image: url('./imagens/fundo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
