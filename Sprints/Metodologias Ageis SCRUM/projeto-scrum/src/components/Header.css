@@ -14,5 +14,44 @@
 
 .logo {
     border-radius: 200px;
-    margin-left: 10px;
+    margin-left: 15px;
+}
+
+
+.navbar {
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    
+}
+
+a, button{
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+}
+
+.login button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-shadow: 0 0 10px var(--harmonizacao);
+
+}
+
+.login button:hover {
+    cursor: pointer;
+
 }

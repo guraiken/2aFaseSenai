@@ -7,10 +7,10 @@ background-color: #132A3B;
 --aviso-destaque: #FEC968;
 --fundo-escuro: #132A3B; */
 
---principal: #00CFFF;
---contraste: #FFC300;
---cor-fundo: #132A3B;
---harmonizacao: #4CA6C9;
+--principal: #00c0ec;
+--contraste: #fed54e;
+--cor-fundo: #18133b;
+--harmonizacao: #7330d03c;
 
   background-image: url('./imagens/fundo.jpg');
   background-repeat: no-repeat;

@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-    <Header nomeAplicacao={"Paideia"} />
-    <Body fraseImpac={'Paideia. Onde o seu potencial se encontra com o conhecimento.'} descrição={'alguma coisa de alguma coisa'}  />
+    <Header nomeAplicacao={"Paideia"} link1={"CURSOS"} link2={"QUEM SOMOS?"} link3={"CONTATO"}/>
+    <Body/>
     </>
   )
 }
