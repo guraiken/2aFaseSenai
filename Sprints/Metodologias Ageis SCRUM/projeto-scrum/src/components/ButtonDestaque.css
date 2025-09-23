@@ -6,11 +6,10 @@
 }
 
 .button-destaques{
-    transition: 0.3s ease transform, 0.3s ease box-shadow;
-    border-radius: 15px;
-    font-size: 22px;
-    width: 60%;
-    height: 40%;
+    transition: 0.3s ease transform, 0.3s ease box-shadow, 0.5s ease color, 0.3s ease font-size;
+    border-radius: 40px;
+    font-size: 30px;
+    padding: 35px 60px;
     background-color: var(--contraste);
     border: none;
     color: black;
@@ -18,7 +17,9 @@
 }
 
 .button-destaques:hover {
-    transition: 0.3s ease transform, 0.3s ease box-shadow;
-    box-shadow: 0 0 30px var(--contraste);
+    transition: 0.3s ease transform, 0.3s ease box-shadow, 0.5s ease color, 0.3s ease font-size;
+    color: white;
+    box-shadow: 0 0 10px var(--contraste);
     transform: scale(1.05);
+    font-size: 32px;
 }

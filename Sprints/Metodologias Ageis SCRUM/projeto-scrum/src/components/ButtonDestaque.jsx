@@ -5,7 +5,7 @@ function ButtonDestaque({func}) {
 
 
   return (
-    <button className='button-destaques' onClick={func} >INSCREVA-SE</button>
+    <button className='button-destaques' onClick={func} >COMECE AGORA</button>
 )
 }
 

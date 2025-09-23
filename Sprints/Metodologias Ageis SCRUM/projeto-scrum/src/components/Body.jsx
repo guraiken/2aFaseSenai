@@ -7,7 +7,7 @@ function Body() {
     <div className='cont-body' >
       <div className='descricao'>
         <h2 className='destaque' >
-        Paideia.
+        PAIDEIA.
         <br/>
         A transformação
         <br />
@@ -15,15 +15,18 @@ function Body() {
         </h2>
       </div>
         <p>
-          Os cursos da Paideia te levam do zero ao avançado.
+          Os cursos da PAIDEIA te levam do zero ao avançado.
           <br/> 
-          Aprenda com especialistas e dê o próximo passo na sua carreira hoje mesmo.
+          Aprenda com especialistas e dê o próximo passo 
           <br />
-          Vagas limitadas!
+          na sua carreira hoje mesmo. 
+          <br />
+          <br />
+        <h3>
+          VAGAS LIMITADAS!
+        </h3>
         </p>
-        <div className='container-botao'>
         <ButtonDestaque/>
-        </div>
     </div>
   )
 }
