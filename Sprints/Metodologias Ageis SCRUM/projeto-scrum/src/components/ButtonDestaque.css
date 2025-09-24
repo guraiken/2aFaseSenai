@@ -6,7 +6,7 @@
 }
 
 .button-destaques{
-    transition: 0.3s ease transform, 0.3s ease box-shadow, 0.5s ease color, 0.3s ease font-size;
+    transition: 0.3s ease scale, 0.3s ease box-shadow, 0.5s ease color;
     border-radius: 40px;
     font-size: 30px;
     padding: 35px 60px;
@@ -17,9 +17,9 @@
 }
 
 .button-destaques:hover {
-    transition: 0.3s ease transform, 0.3s ease box-shadow, 0.5s ease color, 0.3s ease font-size;
+    transition: 0.3s ease scale, 0.3s ease box-shadow, 0.5s ease color;
     color: white;
     box-shadow: 0 0 10px var(--contraste);
-    transform: scale(1.05);
-    font-size: 32px;
+    scale: 1.05;
+
 }

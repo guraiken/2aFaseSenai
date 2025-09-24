@@ -1,0 +1,20 @@
+.hohoho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: cadetblue;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.hohoho input {
+    text-align: center;
+    border-radius: 12px;
+    width: 40%;
+    height: 25px;
+    padding-left: 10px;
+}
