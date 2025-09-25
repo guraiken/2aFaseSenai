@@ -1,6 +1,7 @@
 import './App.css'
 import Aluno from './components/Aluno'
 import Bondinho from './components/Bondinho'
+import Gasolina from './components/Gasolina'
 import Hohoho from './components/Hohoho'
 import Pneu from './components/Pneu'
 import Pum from './components/Pum'
@@ -14,6 +15,7 @@ function App() {
       <Aluno/>
       <Bondinho/>
       <Pum/>
+      <Gasolina/>
     </>
   )
 }
