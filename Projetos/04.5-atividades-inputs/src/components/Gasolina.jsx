@@ -35,7 +35,7 @@ function Gasolina() {
             <option value="Diesel">Diesel</option>
         </select>
         <button onClick={abastecer}>Calcular</button>
-        { gasolina || && 
+        { gasolina || alcool || diesel && 
         <div>
             <h2>MUITO OBRIGADO!!</h2>
             <ol>
