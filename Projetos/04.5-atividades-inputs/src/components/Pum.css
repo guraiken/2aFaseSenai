@@ -1,0 +1,20 @@
+.pum-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(0, 151, 43);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.pum-container input {
+    text-align: center;
+    border-radius: 12px;
+    width: 40%;
+    height: 25px;
+    padding-left: 10px;
+}
