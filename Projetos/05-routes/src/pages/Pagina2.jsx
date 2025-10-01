@@ -4,7 +4,7 @@ function Pagina2() {
   return (
     <div>
         <Navbar/>
-        Pagina2
+        <h1>Pagina 2</h1>
     </div>
   )
 }
