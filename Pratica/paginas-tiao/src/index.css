@@ -1,0 +1,15 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  --cor-de-fundo: rgb(176, 176, 176);
+  --destaque: brown;
+  --sub-destaque: rgba(174, 89, 63, 0.826);
+}
+
+body, html, #root {
+  min-height: 100vh;
+  background-color: var(--cor-de-fundo);
+}
+

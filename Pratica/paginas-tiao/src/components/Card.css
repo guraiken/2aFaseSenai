@@ -1,0 +1,44 @@
+.card-container {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    gap: 10px;
+    
+    background-color: var(--sub-destaque);
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.708);
+}
+
+.card button {
+    color: white;
+    background-color: var(--destaque);
+    padding: 5px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.card button:hover {
+    cursor: pointer;
+    scale: 1.01;
+}
+
+.card h3 {
+    color: rgb(255, 205, 67);
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}

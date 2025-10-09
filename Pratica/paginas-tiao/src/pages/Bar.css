@@ -1,0 +1,12 @@
+.bar-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    gap: 25px;
+    
+    color: white;
+    background-color: var(--cor-de-fundo);
+}

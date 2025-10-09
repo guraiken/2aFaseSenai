@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    gap: 20px;
+    background-color: var(--destaque);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);   
+}
