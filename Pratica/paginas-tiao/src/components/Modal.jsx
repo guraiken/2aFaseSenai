@@ -25,10 +25,12 @@ useEffect(()=> {
   return (
     <div className='modal-container'>
        {
-        <div>
+        <div className='modal'>
         <h1>{teste.nome}</h1>
-        <h2>{teste.valor}</h2>
+        <h2>POR {teste.valor} PILA</h2>
         <img src="https://cdn.awsli.com.br/2500x2500/1312/1312517/produto/2249731950800813588.jpg" alt="" width={"200px"}/>
+        <h1>PARABÉNS, VOCE CONSEGUIU FINALIZAR A SUA COMPRA</h1>
+        <h2>COM SUCESSO</h2>
         </div>
        }
     </div>
