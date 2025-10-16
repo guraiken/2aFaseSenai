@@ -72,11 +72,10 @@ app.get("/clientes/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const [cliente] = await connection.query(
-      "SELECT * FROM clientes WHERE id = ?",
-      [id]
+      `SELECT * FROM clientes WHERE id_cliente = ${id}`
     );
     if (cliente.length === 0) {
-      return res.status(404).json({ erro: "Cliente nÃ£o encontrado" });
+      return res.status(404).json({ erro: "Cliente não encontrado" });
     }
     res.json(cliente[0]);
   } catch (error) {
@@ -85,7 +84,20 @@ app.get("/clientes/:id", async (req, res) => {
   }
 });
 
-// Middleware de tratamento e log de erros (fica apÃ³s as rotas)
+app.put("/clientes/:id", async (req, res) => {
+  const {id} = req.params
+  const {nome, endereco, email, telefone} = req.body
+
+  try {
+    const [cliente] = await connection.query(
+      `UPDATE clientes SET  nome = ${nome}, endereco = ${endereco}, email =${email}, telefone = ${telefone} WHERE id_cliente = '${id}'`
+    )
+    res.json("usuario alterado com sucesso")
+  }catch (error){
+    console.error("deu merda")
+  }})
+  
+  // Middleware de tratamento e log de erros (fica apÃ³s as rotas)
 // Qualquer erro nÃ£o tratado em rotas cairÃ¡ aqui
 app.use((err, req, res, next) => {
   const timestamp = new Date().toISOString();
@@ -97,3 +109,4 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
   console.log("API Funcionando");
 });
+

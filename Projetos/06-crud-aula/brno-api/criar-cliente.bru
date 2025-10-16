@@ -1,11 +1,11 @@
 meta {
-  name: alterar-cliente
+  name: criar-cliente
   type: http
   seq: 1
 }
 
-put {
-  url: http://localhost:3000/clientes/1
+post {
+  url: http://localhost:3000/clientes
   body: json
   auth: none
 }
