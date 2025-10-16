@@ -1,5 +1,5 @@
 const express = require("express")
-const mysql = require("mysql2")
+const mysql = require("mysql2/promise")
 const app = express()
 const port = 3000
 
@@ -11,24 +11,29 @@ const connection = mysql.createConnection({
     password: "senai"
 })
 
+
 connection.connect()
+
 
 app.post('/clientes', async (req, res) => {
     const {nome, endereco, email, telefone} = req.body;
     try {
-        const [result] = await
-        connection.query(
+        const [result] = await connection.query(
             `INSERT INTO
             cliente
             (nome, endereco, email, telefone)
             VALUES
-            (?, ?, ?, ?)`, [nome, endereco, email, telefone]
+            (?, ?, ?, ?)`, 
+            [nome, endereco, email, telefone]
         );
-        const [novo_cliente] =
-        await connection.query(
-            'SELECT * FROM cliente WHERE id =  ?', [result.insertId]
-        )
-        res.status(201).json((novo_cliente[0]))
+        let idInserido = result.insertId
+        res.status(201).json({
+            idInserido,
+            nome,
+            endereco,
+            email,
+            telefone
+        })
     } catch (errinho) {
         console.error(errinho.message)
         res.status(500).json({erro: "Falha do servidor ao criar o cliente"})

@@ -1,0 +1,21 @@
+meta {
+  name: Untitled Request
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/clientes
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "nome": "Gustavo",
+    "endereco": "teste-endereco",
+    "email": "emailleo",
+    "telefone": 1523520423
+  }
+  
+}
