@@ -1,5 +1,6 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
+const cors = require('cors')
 const app = express();
 const port = 3000;
 
@@ -22,6 +23,10 @@ initDB().catch((err) => {
 });
 
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173' // ou '*', para permitir tudo (somente para desenvolvimento)
+}));
 
 app.post("/clientes", async (req, res) => {
   const { nome, endereco, email, telefone } = req.body;
@@ -72,7 +77,8 @@ app.get("/clientes/:id", async (req, res) => {
   const { id } = req.params;
   try {
     const [cliente] = await connection.query(
-      `SELECT * FROM clientes WHERE id_cliente = ${id}`
+      `SELECT * FROM clientes WHERE id_cliente = ?`,
+      [id]
     );
     if (cliente.length === 0) {
       return res.status(404).json({ erro: "Cliente não encontrado" });
@@ -90,9 +96,10 @@ app.put("/clientes/:id", async (req, res) => {
 
   try {
     const [cliente] = await connection.query(
-      `UPDATE clientes SET  nome = ${nome}, endereco = ${endereco}, email =${email}, telefone = ${telefone} WHERE id_cliente = '${id}'`
+      `UPDATE clientes SET  nome = ?, endereco = ?, email = ?, telefone = ? WHERE id_cliente = ?`,
+      [nome, endereco, email, telefone, id]
     )
-    res.json("usuario alterado com sucesso")
+    res.status(200).json(cliente)
   }catch (error){
     console.error("deu merda")
   }})
