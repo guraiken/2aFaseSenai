@@ -1,0 +1,44 @@
+CREATE DATABASE banco_trigger;
+
+USE banco_trigger;
+
+CREATE TABLE produto(
+id_produto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(75),
+preco DECIMAL(8,2),
+estoque INT
+);
+
+CREATE TABLE pedido(
+id_pedido INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+data_horario DATETIME,
+quantidade INT,
+produto_id INT,
+FOREIGN KEY(produto_id)
+REFERENCES produto(id_produto)
+);
+
+INSERT INTO produto
+(nome, preco, estoque)
+VALUES
+('caderno', 19.00, 200),
+('caneta', 5.00, 500),
+('lápis', 3.00, 1000);
+
+DELIMITER $$
+CREATE TRIGGER estoque_atualizado
+AFTER INSERT ON pedido
+FOR EACH ROW 
+BEGIN
+UPDATE produto
+SET produto.estoque = produto.estoque - new.quantidade
+WHERE produto.id_produto = new.produto_id;
+END; 
+$$
+
+INSERT INTO pedido
+(data_horario, quantidade, produto_id)
+VALUES
+('2025-10-16', 49, 1);
+
+SELECT * FROM produto;
