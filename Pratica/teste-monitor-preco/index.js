@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs")
-
+  
 const config = require("./config.json");
 const { timeStamp } = require("console");
 const urls = config.urls
@@ -11,7 +11,7 @@ if (!Array.isArray(urls) || urls.length === 0) {
 }
 
 (async ()=> {
-    const browser = await puppeteer.launch({headless: false})
+    const browser = await puppeteer.launch({headless: false, })
     const page = await browser.newPage();
     const results = [];
 
@@ -22,18 +22,22 @@ if (!Array.isArray(urls) || urls.length === 0) {
 
       const nameSelector = "h1.tit-prod";
       const priceSelector = "#valVista";
+      const imgSelector = "img.zoomImg";
 
       await page.waitForSelector(nameSelector);
       await page.waitForSelector(priceSelector);
+      await page.waitForSelector(imgSelector);
 
       const name = await page.$eval(nameSelector, (el) => el.innerText.trim());
       const price = await page.$eval(priceSelector, (el) => el.innerText.trim());
+      const img = await page.$eval(imgSelector, (el) => el.src.trim());
 
       const productData = {
         url,
+        img,
         name,
         price,
-        timeStamp: new Date().toISOString()
+        timeStamp: new Date().toLocaleString()
       };
 
       console.log("Produto capturado:", productData.name);

@@ -45,6 +45,7 @@ id_post INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 titulo VARCHAR(75),
 descricao TEXT,
 avaliacao INT (2),
+CHECK (avaliacao <= 10 AND avaliacao >= 0),
 usuario_id INT,
 computador_id INT,
 FOREIGN KEY(usuario_id)
