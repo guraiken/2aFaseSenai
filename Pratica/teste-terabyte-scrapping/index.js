@@ -15,12 +15,45 @@ if (!Array.isArray(urls) || urls.length === 0) {
     const page = await browser.newPage();
     const results = [];
 
-    for (const url of urls) {
-    try {
-      console.log(`Acessando: ${url}`);
-      await page.goto(url, { waitUntil: "load" });
+    
 
-      const products = await page.$$eval("div.product-item", (items) => {
+    for (const url of urls) {
+      
+      try {
+        console.log(`Acessando: ${url}`);
+        await page.goto(url, { waitUntil: "load" });
+
+        const buttonSelector = "#pdmore"
+
+        async function clickVerMais() {
+          let tentativas = 0;
+          while (tentativas < 20) { // limite de segurança para evitar loop infinito
+            const botaoExiste = await page.$(buttonSelector);
+            if (!botaoExiste) {
+              console.log("Nenhum botão 'Ver mais' encontrado. Continuando...");
+              break;
+            }
+  
+            console.log(`Clicando no botão 'Ver mais' (tentativa ${tentativas + 1})...`);
+            await botaoExiste.click();
+            await new Promise(resolve => setTimeout(resolve, 2000));
+  
+            // Rola a página até o fim para forçar o carregamento dinâmico
+            await page.evaluate(() => {
+              window.scrollBy(0, window.innerHeight);
+            });
+  
+            tentativas++;
+          }
+        }
+  
+        // Clica no botão "Ver mais" até carregar tudo
+        await clickVerMais();
+  
+        // Espera garantir que todos os produtos carregaram
+        await page.waitForSelector("a.product-item__name");
+
+        const products = await page.$$eval("div.product-item", (items) => {
         return items.map(item => {
           const nameEl = item.querySelector("a.product-item__name");
           const priceEl = item.querySelector("div.product-item__new-price");
