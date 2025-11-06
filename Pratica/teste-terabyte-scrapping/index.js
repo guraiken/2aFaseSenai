@@ -10,10 +10,20 @@ if (!Array.isArray(urls) || urls.length === 0) {
   process.exit(1);
 }
 
+
 (async ()=> {
-    const browser = await puppeteer.launch({headless: false, })
+    const browser = await puppeteer.launch({
+      headless: false, 
+      args: [
+        "--window-position=-10000,0",
+        "--window-size=800,600"
+      ]
+    });
+
     const page = await browser.newPage();
     const results = [];
+
+    
 
     
 
@@ -24,6 +34,7 @@ if (!Array.isArray(urls) || urls.length === 0) {
         await page.goto(url, { waitUntil: "load" });
 
         const buttonSelector = "#pdmore"
+        const spanSelector = "#bannerPop"
 
         async function clickVerMais() {
           let tentativas = 0;
@@ -33,7 +44,17 @@ if (!Array.isArray(urls) || urls.length === 0) {
               console.log("Nenhum botão 'Ver mais' encontrado. Continuando...");
               break;
             }
-  
+
+            const popup = await page.$(spanSelector);
+            if (popup) {
+              console.log("Escondendo pop-up...");
+              // Usa page.evaluate para rodar código no contexto do navegador
+              await page.evaluate(el => {
+                el.style.display = "none";
+                el.className = "modal fade";
+              }, popup); // Passa o 'popup' encontrado como argumento para 'el'
+            }
+
             console.log(`Clicando no botão 'Ver mais' (tentativa ${tentativas + 1})...`);
             await botaoExiste.click();
             await new Promise(resolve => setTimeout(resolve, 2000));
@@ -84,6 +105,9 @@ if (!Array.isArray(urls) || urls.length === 0) {
 
   await browser.close();
 
+  const fontes = results.filter(result => (result.link && result.url.includes("fontes")))
+  
   fs.writeFileSync("products.json", JSON.stringify(results, null, 2));
+  fs.writeFileSync("fontes.json", JSON.stringify(fontes, null, 2));
   console.log("Todos os produtos salvos em product-price.json com sucesso!");
 })();
