@@ -38,8 +38,9 @@ body {
     background-color: pink;
 
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: column;
     }
 
 #bottom {
