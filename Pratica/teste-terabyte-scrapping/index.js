@@ -14,10 +14,6 @@ if (!Array.isArray(urls) || urls.length === 0) {
 (async ()=> {
     const browser = await puppeteer.launch({
       headless: false, 
-      args: [
-        "--window-position=-10000,0",
-        "--window-size=800,600"
-      ]
     });
 
     const page = await browser.newPage();

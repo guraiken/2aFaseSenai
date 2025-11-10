@@ -1,0 +1,53 @@
+CREATE DATABASE banco_procedure;
+
+USE banco_procedure;
+
+CREATE TABLE estudantes(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(75),
+matricula INT,
+curso VARCHAR(75),
+cidade VARCHAR(75)
+);
+
+INSERT INTO estudantes
+(nome, matricula, curso)
+VALUES 
+('Cleiton', 12123123, "Dev Sistemas"),
+('Wagner', 12563123, "Dev Sistemas"),
+('Wilson', 12573123, "Dev Sistemas"),
+('Cleide', 17523123, "Dev Sistemas");
+
+SELECT * FROM estudantes;
+
+DELIMITER // 
+CREATE PROCEDURE estudantes_select
+(pesquisa_id INT)
+BEGIN
+	SELECT * FROM estudantes
+	WHERE estudantes.id = pesquisa_id;
+END //
+
+SHOW PROCEDURE STATUS;
+
+SHOW CREATE PROCEDURE estudantes_select;
+
+DROP PROCEDURE estudantes_select;
+
+CALL estudantes_select(3);
+
+DROP DATABASE banco_procedure;
+
+DELIMITER //
+CREATE PROCEDURE atualizar_estudante
+(pesquisar_id INT, nova_matri INT, novo_curso VARCHAR(75))
+BEGIN
+    UPDATE estudantes
+    SET matricula = nova_matri, curso = novo_curso
+    WHERE id = pesquisar_id;
+    SELECT * FROM estudantes
+    WHERE id = pesquisar_id;
+END //
+
+
+CALL atualizar_estudante(1, 123123123, "Artes");
