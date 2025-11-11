@@ -14,8 +14,8 @@ INSERT INTO estudantes
 (nome, matricula, curso)
 VALUES 
 ('Cleiton', 12123123, "Dev Sistemas"),
-('Wagner', 12563123, "Dev Sistemas"),
-('Wilson', 12573123, "Dev Sistemas"),
+('Wagner', 12563123, "Gastronomia"),
+('Wilson', 12573123, "Gastronomia"),
 ('Cleide', 17523123, "Dev Sistemas");
 
 SELECT * FROM estudantes;
@@ -36,8 +36,6 @@ DROP PROCEDURE estudantes_select;
 
 CALL estudantes_select(3);
 
-DROP DATABASE banco_procedure;
-
 DELIMITER //
 CREATE PROCEDURE atualizar_estudante
 (pesquisar_id INT, nova_matri INT, novo_curso VARCHAR(75))
@@ -45,9 +43,29 @@ BEGIN
     UPDATE estudantes
     SET matricula = nova_matri, curso = novo_curso
     WHERE id = pesquisar_id;
-    SELECT * FROM estudantes
-    WHERE id = pesquisar_id;
+    SELECT * FROM estudantes;
 END //
 
-
 CALL atualizar_estudante(1, 123123123, "Artes");
+
+DELIMITER //
+CREATE PROCEDURE deletar_estudante 
+(pesquisar_id INT)
+BEGIN
+	DELETE estudantes FROM estudantes
+    WHERE id = pesquisar_id;
+    SELECT * FROM estudantes;
+END //
+
+CALL deletar_estudante(1)
+
+DELIMITER //
+CREATE PROCEDURE listar_estudantes
+(curso_pesquisado VARCHAR(75))
+BEGIN
+	SELECT count(id) AS qntd_total_estudantes FROM estudantes
+    WHERE curso = curso_pesquisado;
+END //
+
+CALL listar_estudantes("Dev Sistemas");
+
