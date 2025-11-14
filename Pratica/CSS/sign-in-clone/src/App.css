@@ -1,0 +1,153 @@
+.page-container {
+  display: flex;
+  min-height: 100vh;
+
+  background-color: tomato;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+
+button {
+  font-size: 1.2rem;
+  border-radius: 30px;
+  border-style: none;
+  padding: 15px 10%;
+  
+  cursor: pointer;
+
+}
+
+  .page-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    background-color: white;
+  }
+    .left-signin {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      height: 30%;
+
+      font-size: 22px;
+    }
+    .left-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 10%;
+
+      gap: 20px;
+
+    }
+
+    .left-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      height: 55%;
+
+      color: #93939B;
+    }
+      .bottom-inputs {
+        width: 100%;
+        height: 35%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .bottom-inputs input {
+        width: 50%;
+        height: 100%;
+
+        border-style: none;
+        background-color: #DFDFDF;
+        padding: 5px 15px;
+      }
+
+    h3 {
+      color: rgb(92, 92, 92);
+      font-weight: lighter;
+      cursor: pointer;
+    }
+    
+    .left-bottom button{
+      transition: all 0.2s ease;
+      background-color: #e45225;
+      color: white;
+      cursor: pointer;
+    }
+
+    .left-bottom button:hover {
+      transition: all 0.2s ease;
+      background-color: #FF5859;
+      scale: 1.05;
+    }
+
+  
+  .page-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+
+    background-color: #FF5859;
+    
+  }
+    .right-middle {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      height: 25%;
+
+
+    }
+
+    .right-middle h1{
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .right-middle span {
+      color: #f5cccc;
+    }
+
+      .right-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        height: 15%;
+      }
+
+      .right-button button {
+        transition: all 0.2s ease;
+        border-style: solid;
+        border-color: white;
+        background-color: rgba(255, 228, 196, 0);
+        color: white;
+      }
+
+      .right-button button:hover {
+          transition: all 0.2s ease;
+          color: black;
+          background-color: white;
+      }
+
+      img {
+        cursor: pointer;
+      }
+
+      img:hover {
+        transition: scale ease 0.2s;
+        scale: 1.05
+      }
+
+
